@@ -1,0 +1,20 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "afterDelay",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.bracketPairColorization.enabled": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "avoid",
+  "prettier.useTabs": false,
+  "prettier.printWidth": 80,
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.wait": 500,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.ts": "typescriptreact"
+  }
+}

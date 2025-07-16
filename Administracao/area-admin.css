@@ -1,0 +1,470 @@
+/* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000;
+    color: #00ffff;
+    min-height: 100vh;
+}
+
+/* ===== SEÇÃO: PÁGINA DE LOGIN ===== */
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #001122 0%, #000000 100%);
+}
+
+.caixa-login {
+    background: #000000;
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 400px;    text-align: center;
+}
+
+.titulo-login {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
+
+/* Grupos de formulário */
+.grupo-formulario {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00ffff;
+    font-weight: 500;
+}
+
+.grupo-formulario input {
+    width: 100%;
+    padding: 1rem;
+    background: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    color: #00ffff;
+    font-size: 1rem;
+}
+
+.grupo-formulario input:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* Botão de login */
+.botao-login {
+    background: #000000;
+    color: #00ffff;
+    padding: 1rem 2rem;
+    border: 2px solid #00ffff;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.botao-login:hover {
+    color: #00ff00b0;
+    background: rgba(0, 255, 0, 0.2);
+    transform: translateY(-2px);
+    border: 1px solid #00ff009a;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    text-shadow: 0 0 5px #00ff00;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.botao-login:active {
+    opacity: 0.5;
+    color: #00ff00;
+    border: 3px solid rgba(0, 255, 0, 0.3);
+}
+
+/* ===== SEÇÃO: PAINEL ADMINISTRATIVO ===== */
+.container-admin {
+    display: none;
+    min-height: 100vh;
+}
+
+/* Cabeçalho do admin */
+.cabecalho-admin {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 1rem 0;
+    border-bottom: 2px solid #00ffff;
+    box-shadow: 0 2px 20px rgba(0, 255, 255, 0.3);
+}
+
+.conteudo-cabecalho {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-admin {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.botao-sair {
+    background: #000000;
+    color: #00ff00;
+    padding: 0.5rem 1rem;
+    border: 2px solid #00ff00;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-sair:hover,
+.botao-sair:active {
+    border: 2px solid #00ff00;
+    background: rgba(0, 255, 0, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+/* Área principal do admin */
+.principal-admin {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    gap: 2rem;
+}
+
+/* ===== SEÇÃO: BARRA LATERAL (SIDEBAR) ===== */
+.barra-lateral {
+    width: 250px;
+    background: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.menu-lateral {
+    list-style: none;
+}
+
+.menu-lateral li {
+    margin-bottom: 1rem;
+}
+
+.menu-lateral a {
+    display: block;
+    padding: 1rem;
+    color: #00ffff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a.ativo {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.menu-lateral a.voltar {
+    color: #00ff00;
+}
+
+.menu-lateral a.voltar:hover,
+.menu-lateral a.voltar:active {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* ===== SEÇÃO: ÁREA DE CONTEÚDO ===== */
+.area-conteudo {
+    flex: 1;
+    background: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.secao {
+    display: none;
+}
+
+.secao.ativo {
+    display: block;
+}
+
+.secao h2 {
+    color: #00ffff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* ===== SEÇÃO: CARDS DO DASHBOARD ===== */
+.cartoes-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cartao {
+    background: #000000;
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.cartao:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.numero-cartao {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.rotulo-cartao {
+    color: #00ffff;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* ===== SEÇÃO: TABELAS ===== */
+.container-tabela {
+    background: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    color: #00ffff;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #00ffff;
+}
+
+th {
+    background: rgba(0, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(0, 255, 255, 0.05);
+}
+
+/* ===== SEÇÃO: BOTÕES ===== */
+.botao {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.2rem;
+}
+
+.botao-primario {
+    background: #000000;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+}
+
+.botao-primario:hover {
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    transform: translateY(-2px);
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.botao-primario:active {
+    opacity: 0.7;
+    color: #00ff00;
+    border: 3px solid rgba(0, 255, 0, 0.3);
+}
+
+/* BOTÃO RESPONDER - ESPECÍFICO PARA FICAR AZUL - MAIOR ESPECIFICIDADE */
+button.botao-responder,
+.botao-responder {
+    background: #000000 !important;
+    color: #00ffff !important;
+    border: 2px solid #00ffff !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 0.2rem !important;
+}
+
+button.botao-responder:hover,
+.botao-responder:hover {
+    background: rgba(0, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 2px solid #00ffff !important;
+    box-shadow: 0 0 15px #00ffff !important;
+    transform: none !important;
+    text-shadow: none !important;
+}
+
+button.botao-responder:active,
+.botao-responder:active {
+    background: rgba(0, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border: 2px solid #00ffff !important;
+    opacity: 0.8 !important;
+}
+
+.botao-perigo {
+    background: #000000;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+}
+
+.botao-perigo:hover {
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.botao-info {
+    background: #000000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+}
+
+.botao-info:hover {
+    background: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* ===== SEÇÃO: FORMULÁRIOS ===== */
+.formulario-admin {
+    background: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.formulario-admin input,
+.formulario-admin textarea,
+.formulario-admin select {
+    width: 100%;
+    padding: 1rem;
+    background: #000000;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    color: #00ffff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.formulario-admin input:focus,
+.formulario-admin textarea:focus,
+.formulario-admin select:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* ===== SEÇÃO: BADGES DE STATUS ===== */
+.status {
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-novo {
+    background: rgba(98, 0, 255, 0.2);
+    color: #5900ff;
+    border: 1px solid #5900ff;
+}
+
+.status-em-andamento {
+    background: rgba(255, 255, 0, 0.2);
+    color: #ffff00;
+    border: 1px solid #ffff00;
+}
+
+.status-concluido {
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+}
+
+.status-respondida {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+}
+
+/* ===== SEÇÃO: RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .principal-admin {
+        flex-direction: column;
+    }
+
+    .barra-lateral {
+        width: 100%;
+    }
+
+    .cartoes-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .caixa-login {
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .conteudo-cabecalho {
+        padding: 0 1rem;
+    }
+
+    .logo-admin {
+        font-size: 1.5rem;
+    }
+}

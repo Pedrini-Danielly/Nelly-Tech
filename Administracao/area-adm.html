@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="area-admin.css">
+    <title>Nelly Tech - Área Administrativa</title>
+</head>
+
+<body>
+<!-- ===== SEÇÃO: PÁGINA DE LOGIN ===== -->
+    <div id="paginaLogin" class="container-login">
+        <div class="caixa-login">
+            <h1 class="titulo-login">👩‍💻 Admin</h1>
+            <form id="formularioLogin">
+                <div class="grupo-formulario">
+                    <label for="nomeUsuario">Usuário:</label>
+                    <input type="text" id="nomeUsuario" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="senhaUsuario">Senha:</label>
+                    <input type="password" id="senhaUsuario" required>
+                </div>
+                <button type="submit" class="botao-login">Entrar</button>
+            </form>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+                Demo: admin / admin123
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== SEÇÃO: PAINEL ADMINISTRATIVO ===== -->
+    <div id="containerAdmin" class="container-admin">
+        <!-- Cabeçalho do Admin -->
+        <header class="cabecalho-admin">
+            <div class="conteudo-cabecalho">
+                <div class="logo-admin">NELLY-TECH Admin</div>
+                <button type="button" class="botao-sair" onclick="sairSistema()">Sair</button>
+
+            </div>
+        </header>
+
+        <!-- Área Principal -->
+        <div class="principal-admin">
+            <!-- Barra Lateral -->
+            <nav class="barra-lateral">
+                <ul class="menu-lateral">
+                    <li><a href="#" onclick="mostrarSecao('dashboard')" class="ativo">Dashboard</a></li>
+                    <li><a href="#" onclick="mostrarSecao('projetos')">Projetos</a></li>
+                    <li><a href="#" onclick="mostrarSecao('mensagens')">Mensagens</a></li>
+                    <li><a href="#" onclick="mostrarSecao('configuracoes')">Configurações</a></li>
+                    <li><a href="../home/index.html" class="voltar">Voltar ao Site</a></li>
+                </ul>
+            </nav>
+
+            <!-- Área de Conteúdo -->
+            <main class="area-conteudo">
+                <!-- ===== SEÇÃO: DASHBOARD ===== -->
+                <section id="dashboard" class="secao ativo">
+                    <h2>Dashboard</h2>
+                    <div class="cartoes-dashboard">
+                        <div class="cartao">
+                            <div class="numero-cartao" id="totalProjetos">12</div>
+                            <div class="rotulo-cartao">Total de Projetos</div>
+                        </div>
+                        <div class="cartao">
+                            <div class="numero-cartao" id="projetosAtivos">5</div>
+                            <div class="rotulo-cartao">Projetos Ativos</div>
+                        </div>
+                        <div class="cartao">
+                            <div class="numero-cartao" id="novasMensagens">8</div>
+                            <div class="rotulo-cartao">Novas Mensagens</div>
+                        </div>
+                        <div class="cartao">
+                            <div class="numero-cartao" id="projetosConcluidos">7</div>
+                            <div class="rotulo-cartao">Projetos Concluídos</div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #00ffff; margin: 2rem 0 1rem 0;">Atividades Recentes</h3>
+                    <div class="container-tabela">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Atividade</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="atividadesRecentes">
+                                <tr>
+                                    <td>2025-06-04</td>
+                                    <td>Nova mensagem de João Silva</td>
+                                    <td><span class="status status-novo">Nova</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-03</td>
+                                    <td>Projeto E-commerce iniciado</td>
+                                    <td><span class="status status-em-andamento">Em Andamento</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-02</td>
+                                    <td>Projeto Landing Page concluído</td>
+                                    <td><span class="status status-concluido">Concluído</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ===== SEÇÃO: PROJETOS ===== -->
+                <section id="projetos" class="secao">
+                    <h2>Gerenciar Projetos</h2>
+
+                    <!-- Formulário para Adicionar Projeto -->
+                    <div class="formulario-admin">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Adicionar Novo Projeto</h3>
+                        <form id="formularioProjeto">
+                            <input type="text" placeholder="Nome do Projeto" id="nomeProjeto" required>
+                            <input type="text" placeholder="Cliente" id="clienteProjeto" required>
+                            <textarea placeholder="Descrição do Projeto" id="descricaoProjeto" rows="4" required></textarea>
+                            <select id="statusProjeto" required>
+                                <option value="">Selecione o Status</option>
+                                <option value="novo">Novo</option>
+                                <option value="em-andamento">Em Andamento</option>
+                                <option value="concluido">Concluído</option>
+                            </select>
+                            <input type="date" id="prazoProjeto" required>
+                            <button type="submit" class="botao botao-primario">Adicionar Projeto</button>
+                        </form>
+                    </div>
+
+                    <!-- Tabela de Projetos -->
+                    <div class="container-tabela">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Projeto</th>
+                                    <th>Cliente</th>
+                                    <th>Status</th>
+                                    <th>Prazo</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaProjetos">
+                                <tr>
+                                    <td>E-commerce Fashion</td>
+                                    <td>Maria Santos</td>
+                                    <td><span class="status status-em-andamento">Em Andamento</span></td>
+                                    <td>2025-06-15</td>
+                                    <td>
+                                        <button class="botao botao-info">Editar</button>
+                                        <button class="botao botao-perigo">Excluir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sistema CRM</td>
+                                    <td>João Silva</td>
+                                    <td><span class="status status-novo">Novo</span></td>
+                                    <td>2025-07-01</td>
+                                    <td>
+                                        <button class="botao botao-info">Editar</button>
+                                        <button class="botao botao-perigo">Excluir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Landing Page</td>
+                                    <td>Ana Costa</td>
+                                    <td><span class="status status-concluido">Concluído</span></td>
+                                    <td>2025-05-30</td>
+                                    <td>
+                                        <button class="botao botao-info">Editar</button>
+                                        <button class="botao botao-perigo">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ===== SEÇÃO: MENSAGENS ===== -->
+                <section id="mensagens" class="secao">
+                    <h2>Mensagens de Contato</h2>
+
+                    <div class="container-tabela">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Assunto</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaMensagens">
+                                <tr>
+                                    <td>2025-06-04</td>
+                                    <td>Pedro Lima</td>
+                                    <td>pedro@email.com</td>
+                                    <td>Desenvolvimento de App</td>
+                                    <td><span class="status status-novo">Nova</span></td>
+                                    <td>
+                                        <button class="botao botao-info" onclick="verMensagem('Olá Nelly, preciso desenvolver um aplicativo mobile para minha empresa...')">Ver</button>
+                                        <button class="botao-responder">Responder</button>
+                                        <button class="botao botao-perigo">Excluir</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2025-06-03</td>
+                                    <td>Carla Mendes</td>
+                                    <td>carla@email.com</td>
+                                    <td>Site Institucional</td>
+                                    <td><span class="status status-respondida">Respondida</span></td>
+                                    <td>
+                                        <button class="botao botao-info" onclick="verMensagem('Preciso de um site institucional para minha clínica médica...')">Ver</button>
+                                        <button class="botao-responder">Responder</button>
+                                        <button class="botao botao-perigo">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ===== SEÇÃO: CONFIGURAÇÕES ===== -->
+                <section id="configuracoes" class="secao">
+                    <h2>Configurações</h2>
+
+                    <!-- Formulário de Perfil -->
+                    <div class="formulario-admin">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Informações do Perfil</h3>
+                        <form id="formularioPerfil">
+                            <input type="text" placeholder="Nome" value="Nelly Tech" required>
+                            <input type="email" placeholder="Email" value="nelly@nellytech.com" required>
+                            <input type="tel" placeholder="Telefone" value="(11) 99999-9999" required>
+                            <textarea placeholder="Bio/Descrição" rows="4">Desenvolvedora apaixonada por transformar ideias em realidade digital...</textarea>
+                            <button type="submit" class="botao botao-primario">Salvar Perfil</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulário de Senha -->
+                    <div class="formulario-admin">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Alterar Senha</h3>
+                        <form id="formularioSenha">
+                            <input type="password" placeholder="Senha Atual" required>
+                            <input type="password" placeholder="Nova Senha" required>
+                            <input type="password" placeholder="Confirmar Nova Senha" required>
+                            <button type="submit" class="botao botao-primario">Alterar Senha</button>
+                        </form>
+                    </div>
+
+                    <!-- Configurações do Site -->
+                    <div class="formulario-admin">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Configurações do Site</h3>
+                        <form id="formularioSite">
+                            <input type="text" placeholder="Título do Site" value="Nelly Tech - Transformando Ideias em Realidade Digital" required>
+                            <textarea placeholder="Descrição do Site" rows="3">Desenvolvimento web personalizado com foco na experiência do usuário</textarea>
+                            <input type="text" placeholder="Palavras-chave SEO" value="desenvolvimento web, programação, websites">
+                            <button type="submit" class="botao botao-primario">Salvar Configurações</button>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+</body>
+<script src="area-admin.js"></script>
+</html>

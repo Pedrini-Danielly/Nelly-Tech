@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "esbenp.prettier-vscode",
+    "dsznajder.es7-react-js-snippets",
+    "coenraads.bracket-pair-colorizer-2",
+    "styled-components.vscode-styled-components",
+    "xabikos.JavaScriptSnippets",
+    "christian-kohler.path-intellisense",
+    "pranaygp.vscode-css-peek",
+    "eamodio.gitlens",
+    "steoates.autoimport"
+  ]
+}

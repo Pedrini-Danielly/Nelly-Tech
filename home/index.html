@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Nelly Tech - Início</title>
+</head>
+
+<body>
+
+    <!-- ============================== SEÇÃO DE NAVEGAÇÃO ============================== -->
+    <nav>
+        <div class="container">
+            <div class="conteudo-navegacao">
+                <div class="logotipo">NELLY-TECH</div>
+                <ul class="links-navegacao">
+                    <li><a href="#" onclick="mostrarPagina('inicio')">Início</a></li>
+                    <li><a href="#" onclick="mostrarPagina('sobre')">Sobre</a></li>
+                    <li><a href="#" onclick="mostrarPagina('projetos')">Projetos</a></li>
+                    <li><a href="#" onclick="mostrarPagina('contatos')">Contatos</a></li>
+                    <li><a href="../Administracao/area-adm.html">Administrador</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- ============================== PÁGINA INICIAL ============================== -->
+        <div id="inicio" class="pagina ativa">
+            <div class="conteudo-principal">
+                <!-- Seção do Efeito de Digitação -->
+                <div class="secao-digitacao">
+                    <div class="maquina-escrever" id="maquinaEscrever"></div>
+                </div>
+
+                <!-- Seção do Avatar e Formulário -->
+                <div class="secao-avatar">
+                    <!-- Container do Avatar -->
+                    <div class="container-avatar">
+                        <div class="avatar" id="avatar">
+                            <img src="assets/foto-perfil.jpeg" alt="Foto da Nelly" class="foto-avatar"
+                                id="fotoPerfilPrincipal">
+                        </div>
+                        <div class="upload-foto">
+                            <input type="file" id="inputFoto" accept="image/*" onchange="carregarFoto(event)">
+                        </div>
+                        <div class="texto-balao">
+                            Olá! Eu sou a Nelly e estou aqui para transformar suas ideias em códigos funcionais.
+                            Conte-me sobre seu projeto!
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Entrada do Cliente -->
+                    <div class="entrada-cliente">
+                        <h3 class="titulo-entrada">Conte-me sobre sua ideia!</h3>
+                        <form action="https://formcarry.com/s/-vF3ELawnXV"
+                         method="POST" 
+                         enctype="multipart/form-data" class="formulario-projeto" onsubmit="manipularEnvio(event)">
+                            <div class="grupo-formulario">
+                                <label for="nome">Seu Nome:</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="email">Seu Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="projeto">Descreva sua ideia/projeto:</label>
+                                <textarea class="projeto" id="projeto" name="projeto"
+                                    placeholder  ="Conte-me todos os detalhes sobre como você imagina seu projeto..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="botao-enviar">Enviar Projeto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== PÁGINA SOBRE ============================== -->
+        <div id="sobre" class="pagina">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Eu sou a Nelly, desenvolvedora apaixonada por transformar ideias em realidade digital.</p>
+            <p>Com anos de experiência em desenvolvimento web, especializei-me em criar soluções personalizadas que
+                atendem às necessidades específicas de cada cliente.</p>
+            <p>Minha jornada começou com a curiosidade de entender como as coisas funcionam no mundo digital, e hoje
+                tenho o privilégio de ajudar pessoas e empresas a materializar seus sonhos através da tecnologia.</p>
+            <p>Acredito que cada projeto é único e merece uma abordagem personalizada, sempre focando na experiência do
+                usuário e na qualidade do código.</p>
+        </div>
+
+        <!-- ============================== PÁGINA PROJETOS ============================== -->
+        <div id="projetos" class="pagina">
+            <h2>Meus Projetos</h2>
+            <p>Aqui você encontrará alguns dos projetos que desenvolvi ao longo da minha carreira.</p>
+            <p><strong>Site de Advocacia:</strong> Landing page institucional com design profissional e navegação clara.</p>
+            <p><strong>Site de Odontologia:</strong> Página moderna com foco em serviços, contato e estética clean.</p>
+            <p><strong>Site de Pet Shop:</strong> Aplicativo web para gestão de tarefas</p>
+            <p><strong>Site de Cafeteria:</strong> Landing page aconchegante com cardápio digital, animações suaves e layout responsivo.</p>
+            <p>Cada projeto foi desenvolvido com foco na usabilidade, performance e design responsivo.</p>
+        </div>
+
+        <!-- ============================== PÁGINA CONTATOS ============================== -->
+        <div id="contatos" class="pagina">
+            <h2>Entre em Contato</h2>
+            <p>Pronta para dar vida ao seu projeto? Entre em contato comigo!</p>
+            <p><strong>Email:</strong> nelly@nellytech.com</p>
+            <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
+            <p><strong>LinkedIn:</strong> /in/nelly-tech</p>
+            <p><strong>Instagram:</strong> @nelly.tech</p>
+            <p>Estou sempre disponível para discutir novas ideias e projetos. Vamos conversar sobre como posso ajudar
+                você a alcançar seus objetivos digitais!</p>
+        </div>
+    </div>
+
+    <!-- ============================== SCRIPTS ============================== -->
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

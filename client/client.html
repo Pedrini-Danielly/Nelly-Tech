@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="client.css" />
+    <title>Área do Cliente</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="conteudo-navegacao">
+          <div class="logotipo">NELLY-TECH</div>
+          <a
+            href="../Home/index.html"
+            class="voltar-btn"
+            onclick="voltarInicio()"
+            >← Voltar ao Site</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="area-acompanhamento">
+        <!--TÍTULO PRINCIPAL  -->
+        <div class="titulo-principal">
+          <h1>Acompanhamento de Projeto</h1>
+          <p>Acompanhe o progresso do seu projeto em tempo real</p>
+        </div>
+
+        <!--  FORMULÁRIO DE ACESSO  -->
+        <div id="formulario-acesso" class="formulario-acesso">
+          <form onsubmit="acessarProjeto(event)">
+            <div class="grupo-formulario">
+              <label for="codigo-projeto">Código do Projeto:</label>
+              <input
+                type="text"
+                id="codigo-projeto"
+                name="codigo-projeto"
+                placeholder="Ex: PROJ-2024-001"
+                required
+              />
+            </div>
+            <div class="grupo-formulario">
+              <label for="email-cliente">Seu Email:</label>
+              <input
+                type="email"
+                id="email-cliente"
+                name="email-cliente"
+                placeholder="seu@email.com"
+                required
+              />
+            </div>
+            <button type="submit" class="botao-acesso">Acessar Projeto</button>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; text-align: center;"> Código: tech1234 / Email: nelly-tech@nelly</p>
+          </form>
+        </div>
+
+        <!--  PAINEL DO PROJETO -->
+        <div id="painel-projeto" class="painel-projeto">
+          <!-- Informações do Projeto -->
+          <div class="info-projeto">
+            <h2>Site E-commerce para Pet Shop</h2>
+            <div class="detalhes-projeto">
+              <div class="detalhe-item">
+                <div class="label">Cliente:</div>
+                <div class="valor">Maria Santos</div>
+              </div>
+              <div class="detalhe-item">
+                <div class="label">Código:</div>
+                <div class="valor">PROJ-2024-001</div>
+              </div>
+              <div class="detalhe-item">
+                <div class="label">Tipo:</div>
+                <div class="valor">E-commerce</div>
+              </div>
+              <div class="detalhe-item">
+                <div class="label">Inicio:</div>
+                <div class="valor">15/07/2024</div>
+              </div>
+              <div class="detalhe-item">
+                <div class="label">Prazo:</div>
+                <div class="valor">15/08/2024</div>
+              </div>
+              <div class="detalhe-item">
+                <div class="label">Status:</div>
+                <div class="valor">Em Desenvolvimento</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progresso Geral -->
+          <div class="progresso-container">
+            <h3>Progresso Geral</h3>
+            <div class="barra-progresso">
+              <div class="progresso-fill" style="width: 65%"></div>
+            </div>
+            <div class="progresso-texto">65% Concluído</div>
+            <p style="text-align: center; color: #00ffff; margin-top: 1rem">
+              Estamos na fase de desenvolvimento do front-end. Próxima etapa:
+              integração com sistema de pagamento.
+            </p>
+          </div>
+
+          <!-- Timeline do Projeto -->
+          <div class="timeline">
+            <h3>Timeline do Projeto</h3>
+
+            <div class="timeline-item">
+              <div class="timeline-marker concluido">✓</div>
+              <div class="timeline-content">
+                <h4>Briefing e Planejamento</h4>
+                <p>
+                  Reunião inicial realizada, escopo definido e wireframes
+                  aprovados.
+                </p>
+                <div class="data">15/07/2024</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker concluido">✓</div>
+              <div class="timeline-content">
+                <h4>Design e Protótipo</h4>
+                <p>
+                  Layout criado e aprovado pelo cliente. Protótipo interativo
+                  finalizado.
+                </p>
+                <div class="data">18/07/2024</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker em-andamento">⚡</div>
+              <div class="timeline-content">
+                <h4>Desenvolvimento Front-end</h4>
+                <p>
+                  Codificação das páginas principais em andamento.
+                  Responsividade implementada.
+                </p>
+                <div class="data">Em andamento</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">🔄</div>
+              <div class="timeline-content">
+                <h4>Desenvolvimento Back-end</h4>
+                <p>Criação da API, banco de dados e sistema de autenticação.</p>
+                <div class="data">Próxima etapa</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">💳</div>
+              <div class="timeline-content">
+                <h4>Integração de Pagamento</h4>
+                <p>Implementação do sistema de pagamento e checkout.</p>
+                <div class="data">Aguardando</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">🧪</div>
+              <div class="timeline-content">
+                <h4>Testes e Revisão</h4>
+                <p>Testes de funcionalidade, performance e correções finais.</p>
+                <div class="data">Aguardando</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">🚀</div>
+              <div class="timeline-content">
+                <h4>Deploy e Entrega</h4>
+                <p>Publicação do site e treinamento para uso.</p>
+                <div class="data">Aguardando</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arquivos e Entregáveis -->
+          <div class="arquivos-container">
+            <h3>Arquivos e Entregáveis</h3>
+
+            <div class="arquivo-item">
+              <div class="arquivo-icone">🎨</div>
+              <div class="arquivo-info">
+                <h4>Wireframes e Protótipos</h4>
+                <p>
+                  Estrutura visual e fluxo de navegação - Atualizado em
+                  18/07/2024
+                </p>
+              </div>
+              <a
+                href="#"
+                class="arquivo-download"
+                onclick="baixarArquivo('wireframes')"
+                >Download</a
+              >
+            </div>
+
+            <div class="arquivo-item">
+              <div class="arquivo-icone">🎯</div>
+              <div class="arquivo-info">
+                <h4>Documentação Técnica</h4>
+                <p>
+                  Especificações e documentação do projeto - Atualizado em
+                  16/07/2024
+                </p>
+              </div>
+              <a
+                href="#"
+                class="arquivo-download"
+                onclick="baixarArquivo('documentacao')"
+                >Download</a
+              >
+            </div>
+
+            <div class="arquivo-item">
+              <div class="arquivo-icone">👁️</div>
+              <div class="arquivo-info">
+                <h4>Preview do Site</h4>
+                <p>Visualização atual do desenvolvimento - Atualizado hoje</p>
+              </div>
+              <a href="#" class="arquivo-download" onclick="visualizarPreview()"
+                >Visualizar</a
+              >
+            </div>
+          </div>
+
+          <!-- Mensagens e Comunicação -->
+          <div class="mensagens-container">
+            <h3>Mensagens e Updates</h3>
+
+            <div class="mensagem desenvolvedor">
+              <div class="mensagem-header">
+                <span class="mensagem-autor">Nelly (Desenvolvedor)</span>
+                <span class="mensagem-data">Hoje, 14:30</span>
+              </div>
+              <div class="mensagem-conteudo">
+                Oi Maria! Acabei de finalizar a página de produtos. O catálogo
+                está ficando muito bom! Implementei os filtros por categoria e
+                preço como conversamos. Você pode dar uma olhada no preview e me
+                dizer o que achou?
+              </div>
+            </div>
+
+            <div class="mensagem">
+              <div class="mensagem-header">
+                <span class="mensagem-autor">Maria Santos (Cliente)</span>
+                <span class="mensagem-data">Ontem, 16:45</span>
+              </div>
+              <div class="mensagem-conteudo">
+                Olá Nelly! Adorei o progresso até agora. O design está
+                exatamente como imaginei. Só uma dúvida: seria possível
+                adicionar um campo para observações no carrinho de compras?
+              </div>
+            </div>
+
+            <div class="mensagem desenvolvedor">
+              <div class="mensagem-header">
+                <span class="mensagem-autor">Nelly (Desenvolvedor)</span>
+                <span class="mensagem-data">Ontem, 09:15</span>
+              </div>
+              <div class="mensagem-conteudo">
+                Bom dia! Terminei a implementação do sistema de login e
+                cadastro. Os usuários agora podem criar contas e fazer login
+                facilmente. Próximo passo: integrar com o sistema de pagamento.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="client.js"></script>
+  <script src="../storage.js"></script>
+</html>

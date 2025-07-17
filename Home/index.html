@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Nelly Tech</title>
+</head>
+
+<body>
+
+<nav>
+        <div class="container">
+            <div class="conteudo-navegacao">
+                <div class="logotipo">NELLY-TECH</div>
+                <ul class="links-navegacao">
+                    <li><a href="#" onclick="mostrarPagina('inicio')" class="ativo">Início</a></li>
+                    <li><a href="#" onclick="mostrarPagina('servicos')">Serviços</a></li>
+                    <li><a href="#" onclick="mostrarPagina('projetos')">Projetos</a></li>
+                    <li><a href="#" onclick="mostrarPagina('processo')">Processo</a></li>
+                    <li><a href="#" onclick="mostrarPagina('sobre')">Sobre</a></li>
+                    <li><a href="#" onclick="mostrarPagina('contatos')">Contatos</a></li>
+                    <li><a href="../client/client.html">Área Cliente</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- ============================== PÁGINA INICIAL ============================== -->
+        <div id="inicio" class="pagina ativa">
+            <div class="conteudo-principal">
+                <!-- Seção do Efeito de Digitação -->
+                <div class="secao-digitacao">
+                    <div class="maquina-escrever" id="maquinaEscrever"></div>
+                </div>
+
+                <!-- Seção do Avatar e Formulário -->
+                <div class="secao-avatar">
+                    <!-- Container do Avatar -->
+                    <div class="container-avatar">
+                        <div class="avatar" id="avatar">
+                            <div class="placeholder-avatar">👩‍💻</div>
+                        </div>
+                        <div class="texto-balao">
+                            Olá! Eu sou a Nelly e estou aqui para transformar suas ideias em códigos funcionais.
+                            Conte-me sobre seu projeto!
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Entrada do Cliente -->
+                    <div class="entrada-cliente">
+                        <h3 class="titulo-entrada">Conte-me sobre sua ideia!</h3>
+                        <form class="formulario-projeto" onsubmit="manipularEnvio(event)">
+                            <div class="grupo-formulario">
+                                <label for="nome">Seu Nome:</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+
+                            <div class="grupo-formulario">
+                                <label for="tel">Telefone:</label>
+                                <input type="tel" id="tel" name="tel" placeholder="15-999999999">
+                            </div>
+
+                            <div class="grupo-formulario">
+                                <label for="email">Seu Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="empresa">Empresa (opcional):</label>
+                                <input type="text" id="empresa" name="empresa">
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="tipo-projeto">Tipo de Projeto:</label>
+                                <select id="tipo-projeto" name="tipo-projeto" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="landing-page">Landing Page</option>
+                                    <option value="site-institucional">Site Institucional</option>
+                                    <option value="e-commerce">E-commerce</option>
+                                    <option value="aplicacao-web">Aplicação Web</option>
+                                    <option value="api">API/Backend</option>
+                                    <option value="fullstack">Full Stack</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="projeto">Descreva sua ideia/projeto:</label>
+                                <textarea class="projeto" id="projeto" name="projeto"
+                                    placeholder="Conte-me todos os detalhes sobre como você imagina seu projeto..."
+                                    required></textarea>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="prazo">Prazo desejado:</label>
+                                <select id="prazo" name="prazo" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="1-semana">1 semana</option>
+                                    <option value="2-semanas">2 semanas</option>
+                                    <option value="1-mes">1 mês</option>
+                                    <option value="2-meses">2 meses</option>
+                                    <option value="3-meses">3+ meses</option>
+                                    <option value="flexivel">Flexível</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="botao-enviar" id="botaoEnviar">
+                                Enviar Projeto
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== PÁGINA SERVIÇOS ============================== -->
+        <div id="servicos" class="pagina">
+            <h2>Meus Serviços</h2>
+            <p>Ofereço soluções completas de desenvolvimento web, desde o conceito até a implementação final.</p>
+            
+            <div class="grid-servicos">
+                <div class="card-servico">
+                    <div class="icone">🎨</div>
+                    <h3>Front-End</h3>
+                    <p>Desenvolvimento de interfaces modernas e responsivas usando HTML5, CSS3, JavaScript e frameworks como React.</p>
+                    <div class="preco">A partir de R$ 800</div>
+                </div>
+                
+                <div class="card-servico">
+                    <div class="icone">⚙️</div>
+                    <h3>Back-End</h3>
+                    <p>Criação de APIs robustas, bancos de dados e lógica de negócio usando Node.js, Python ou PHP.</p>
+                    <div class="preco">A partir de R$ 1.200</div>
+                </div>
+                
+                <div class="card-servico">
+                    <div class="icone">🚀</div>
+                    <h3>Full Stack</h3>
+                    <p>Desenvolvimento completo de aplicações web, desde o front-end até o back-end e deploy.</p>
+                    <div class="preco">A partir de R$ 1.800</div>
+                </div>
+                
+                <div class="card-servico">
+                    <div class="icone">📱</div>
+                    <h3>Apps Mobile</h3>
+                    <p>Desenvolvimento de aplicações móveis híbridas usando React Native ou Flutter.</p>
+                    <div class="preco">A partir de R$ 2.500</div>
+                </div>
+                
+                <div class="card-servico">
+                    <div class="icone">🔧</div>
+                    <h3>Manutenção</h3>
+                    <p>Suporte técnico, atualizações de segurança e melhorias contínuas em projetos existentes.</p>
+                    <div class="preco">R$ 300/mês</div>
+                </div>
+                
+                <div class="card-servico">
+                    <div class="icone">🎯</div>
+                    <h3>Consultoria</h3>
+                    <p>Análise de projetos, auditoria de código e consultoria em arquitetura de software.</p>
+                    <div class="preco">R$ 150/hora</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== PÁGINA PROJETOS ============================== -->
+        <div id="projetos" class="pagina">
+            <h2>Meus Projetos</h2>
+            <p>Confira alguns dos projetos que desenvolvi para clientes satisfeitos.</p>
+            
+            <div class="grid-projetos">
+                <div class="card-projeto">
+                    <h3>🏛️ Site de Advocacia</h3>
+                    <p>Landing page institucional com design profissional, formulário de contato e integração com WhatsApp. Foco em conversão de leads.</p>
+                    <div class="tecnologias">
+                        <span class="tecnologia">HTML5</span>
+                        <span class="tecnologia">CSS3</span>
+                        <span class="tecnologia">JavaScript</span>
+                        <span class="tecnologia">PHP</span>
+                    </div>
+                </div>
+                
+                <div class="card-projeto">
+                    <h3>🦷 Clínica Odontológica</h3>
+                    <p>Site moderno com sistema de agendamento online, galeria de serviços e depoimentos de pacientes.</p>
+                    <div class="tecnologias">
+                        <span class="tecnologia">React</span>
+                        <span class="tecnologia">Node.js</span>
+                        <span class="tecnologia">MongoDB</span>
+                        <span class="tecnologia">Stripe</span>
+                    </div>
+                </div>
+                
+                <div class="card-projeto">
+                    <h3>🐕 Pet Shop Online</h3>
+                    <p>E-commerce completo com catálogo de produtos, sistema de pagamento e painel administrativo.</p>
+                    <div class="tecnologias">
+                        <span class="tecnologia">Vue.js</span>
+                        <span class="tecnologia">Laravel</span>
+                        <span class="tecnologia">MySQL</span>
+                        <span class="tecnologia">PayPal</span>
+                    </div>
+                </div>
+                
+                <div class="card-projeto">
+                    <h3>☕ Cafeteria Artesanal</h3>
+                    <p>Landing page aconchegante com cardápio digital, localização e sistema de pedidos online.</p>
+                    <div class="tecnologias">
+                        <span class="tecnologia">HTML5</span>
+                        <span class="tecnologia">SCSS</span>
+                        <span class="tecnologia">JavaScript</span>
+                        <span class="tecnologia">Firebase</span>
+                    </div>
+                </div>
+                
+                <div class="card-projeto">
+                    <h3>📊 Sistema de Gestão</h3>
+                    <p>Aplicação web para controle de estoque, vendas e relatórios financeiros com dashboard interativo.</p>
+                    <div class="tecnologias">
+                        <span class="tecnologia">React</span>
+                        <span class="tecnologia">Express</span>
+                        <span class="tecnologia">PostgreSQL</span>
+                        <span class="tecnologia">Chart.js</span>
+                    </div>
+                </div>
+                
+                <div class="card-projeto">
+                    <h3>🏠 Imobiliária Digital</h3>
+                    <p>Plataforma para listagem de imóveis com filtros avançados, tours virtuais e sistema de favoritos.</p>
+                    <div class="tecnologias">
+                        <span class="tecnologia">Next.js</span>
+                        <span class="tecnologia">Python</span>
+                        <span class="tecnologia">Django</span>
+                        <span class="tecnologia">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== PÁGINA PROCESSO ============================== -->
+        <div id="processo" class="pagina">
+            <h2>Meu Processo de Trabalho</h2>
+            <p>Trabalho com metodologia ágil e mantenho você informado em cada etapa do desenvolvimento.</p>
+            
+            <div class="processo-etapas">
+                <div class="etapa">
+                    <div class="numero">01</div>
+                    <h3>Briefing</h3>
+                    <p>Conversamos sobre suas necessidades, objetivos e expectativas para o projeto.</p>
+                </div>
+                
+                <div class="etapa">
+                    <div class="numero">02</div>
+                    <h3>Proposta</h3>
+                    <p>Envio uma proposta detalhada com escopo, cronograma e investimento necessário.</p>
+                </div>
+                
+                <div class="etapa">
+                    <div class="numero">03</div>
+                    <h3>Planejamento</h3>
+                    <p>Definimos a arquitetura, tecnologias e criamos o wireframe do projeto.</p>
+                </div>
+                
+                <div class="etapa">
+                    <div class="numero">04</div>
+                    <h3>Desenvolvimento</h3>
+                    <p>Codifico o projeto mantendo você atualizado com demonstrações regulares.</p>
+                </div>
+                
+                <div class="etapa">
+                    <div class="numero">05</div>
+                    <h3>Testes</h3>
+                    <p>Realizo testes completos de funcionalidade, responsividade e performance.</p>
+                </div>
+                
+                <div class="etapa">
+                    <div class="numero">06</div>
+                    <h3>Entrega</h3>
+                    <p>Faço o deploy e entrego o projeto finalizado com documentação completa.</p>
+                </div>
+            </div>
+            
+            <div class="depoimentos">
+                <h3 style="color: #00ffff; margin-bottom: 2rem; font-size: 1.8rem;">O que meus clientes dizem</h3>
+                
+                <div class="depoimento">
+                    <p>A Nelly superou todas as minhas expectativas! O site ficou exatamente como eu imaginava e o atendimento foi excepcional. Recomendo muito!</p>
+                    <div class="cliente">- Ana Silva, Advogada</div>
+                </div>
+                
+                <div class="depoimento">
+                    <p>Profissional competente e dedicada. Entregou o projeto no prazo e com qualidade impecável. Já estou planejando o próximo projeto com ela.</p>
+                    <div class="cliente">- Carlos Mendes, Dentista</div>
+                </div>
+                
+                <div class="depoimento">
+                    <p>Excelente trabalho! O e-commerce desenvolvido aumentou nossas vendas em 300%. Comunicação clara e suporte contínuo.</p>
+                    <div class="cliente">- Maria Santos, Pet Shop</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== PÁGINA SOBRE ============================== -->
+        <div id="sobre" class="pagina">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Eu sou a Nelly, desenvolvedora apaixonada por transformar ideias em realidade digital.</p>
+            <p>Com mais de 5 anos de experiência em desenvolvimento web, especializei-me em criar soluções personalizadas que atendem às necessidades específicas de cada cliente. Minha jornada começou com a curiosidade de entender como as coisas funcionam no mundo digital, e hoje tenho o privilégio de ajudar pessoas e empresas a materializar seus sonhos através da tecnologia.</p>
+            
+            <h3 style="color: #00ff00; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Minhas Especialidades</h3>
+            <p><strong>Front-End:</strong> HTML5, CSS3, JavaScript ES6+, React, Vue.js, Angular, TypeScript</p>
+            <p><strong>Back-End:</strong> Node.js, Python, PHP, Laravel, Express.js, Django, FastAPI</p>
+            <p><strong>Banco de Dados:</strong> MySQL, PostgreSQL, MongoDB, Firebase</p>
+            <p><strong>Ferramentas:</strong> Git, Docker, AWS, Vercel, Netlify</p>
+            
+            <h3 style="color: #00ff00; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Minha Filosofia</h3>
+            <p>Acredito que cada projeto é único e merece uma abordagem personalizada, sempre focando na experiência do usuário e na qualidade do código. Não apenas desenvolvo, mas também oriento meus clientes sobre as melhores práticas e tecnologias para seus negócios.</p>
+            
+            <p>Estou sempre em constante aprendizado, acompanhando as últimas tendências tecnológicas para oferecer soluções modernas e eficientes.</p>
+        </div>
+
+        <!-- ============================== PÁGINA CONTATOS ============================== -->
+        <div id="contatos" class="pagina">
+            <h2>Entre em Contato</h2>
+            <p>Pronta para dar vida ao seu projeto? Entre em contato comigo através dos canais abaixo!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="padding: 1.5rem; border: 2px solid #00ffff; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📧</div>
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">Email</h3>
+                    <p><strong>nelly@nellytech.com</strong></p>
+                    <p>Respondo em até 2 horas</p>
+                </div>
+                
+                <div style="padding: 1.5rem; border: 2px solid #00ffff; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">WhatsApp</h3>
+                    <p><strong>(11) 99999-9999</strong></p>
+                    <p>Disponível das 9h às 18h</p>
+                </div>
+                
+                <div style="padding: 1.5rem; border: 2px solid #00ffff; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">💼</div>
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">LinkedIn</h3>
+                    <p><strong>/in/nelly-tech</strong></p>
+                    <p>Conecte-se comigo</p>
+                </div>
+                
+                <div style="padding: 1.5rem; border: 2px solid #00ffff; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📷</div>
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">Instagram</h3>
+                    <p><strong>@nelly.tech</strong></p>
+                    <p>Acompanhe meus projetos</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(0, 255, 0, 0.1); border: 2px solid #00ff00; border-radius: 15px;">
+                <h3 style="color: #00ff00; margin-bottom: 1rem; text-align: center;">Horário de Atendimento</h3>
+                <p style="text-align: center;"><strong>Segunda a Sexta:</strong> 9h às 18h</p>
+                <p style="text-align: center;"><strong>Sábado:</strong> 9h às 12h</p>
+                <p style="text-align: center;"><strong>Domingo:</strong> Apenas emergências</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem;">
+                Estou sempre disponível para discutir novas ideias e projetos. Vamos conversar sobre como posso ajudar você a alcançar seus objetivos digitais!
+            </p>
+        </div>
+    </div>
+
+</body>
+<script src="scripts.js"></script>
+<script src="../storage.js"></script>
+</html>
+
+
+<!-- <script src="localStorage-sistema.js"></>
+<script src="Home/script.js"></script> 
+
+ Como implementar:
+
+1. No seu HTML do Admin, adicione:
+
+html<script src="localStorage-sistema.js"></script>
+<script src="Home/script.js"></script>
+
+2. No seu HTML do Site Público, adicione:
+
+html<script src="site-publico-script.js"></script>
+
+3. No formulário de contato, certifique-se que tem:
+
+html<form id="formularioContato" onsubmit="manipularEnvio(event)">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="email" id="email" placeholder="Seu email" required>
+    <textarea id="projeto" placeholder="Descreva seu projeto" required></textarea>
+    <button type="submit">Enviar Mensagem</button>
+</form>

@@ -378,3 +378,9 @@ function adicionarProjetoTeste(codigo, email, nome, cliente) {
 window.addEventListener('load', function() {
     setTimeout(iniciarMaquinaEscrever, 500);
 });
+
+
+
+
+
+
